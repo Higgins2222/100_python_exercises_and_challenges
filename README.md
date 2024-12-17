@@ -6,13 +6,10 @@
 
 https://github.com/zhiwehu/100_plus_Python_Projects_Challenge
 
+## Purpose of This Fork
+
+This repository serves as a personal collection of solutions to Python programming exercises, aimed at enhancing my problem-solving skills and reinforcing my understanding of various concepts. Each solution is carefully crafted to be efficient and clear, with the intention of learning and improving as I progress through these challenges. This fork will also serve as a reference, showcasing my practical coding abilities and commitment to self-improvement.
+
 ## A simple Python online IDE run in browser.
 
-Hey guys I just made a simple Python online IDE run in browser : https://github.com/zhiwehu/react-python-ide. It's free and opensource. Feel free to let me know if you have any issues.
-
-## Python comic
-
-Hey guys I just created a comic for learning Python if you like you could see it from here: https://zhixinfuture.com
-For now I just use Chinese if you like I could use English as well.
-
-![Python Comic](https://github.com/zhiwehu/Python-programming-exercises/blob/master/comic.png?raw=true)
+A simple Python online IDE run in browser : https://github.com/zhiwehu/react-python-ide. It's free and opensource.
