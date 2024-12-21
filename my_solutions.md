@@ -226,32 +226,16 @@ Write a program, which will find all such numbers between 1000 and 3000 (both in
 The numbers obtained should be printed in a comma-separated sequence on a single line.
 
 ```python
-import math
+from math import floor
 
-def split_digits(num):
-    r = []
-    for i in range(len(str(num))):
-        tens = 10 ** (len(str(num)) - (i + 1))
-        r.append(num // tens % 10)
-    return r
-
-
-mylist = []
-for i in range(2000, 3001):
-    even = True
-    num = i
-    for j in [1000,100,10,1]:
-        digit = math.floor(num / j)
-        num -= j * digit
-        if digit % 2 == 0:
-            continue
-        else:
-            even = False
-            break
-    if even:
-        mylist.append(i)
-
-print(*[n for n in mylist if all(digit % 2 == 0 for digit in split_digits(n))], sep=',')
+result = []
+for x in range(1000, 3000):
+    if floor((x / 1000)) % 2 == 0:
+        if floor((x / 100)) % 2 == 0:
+            if floor((x / 10)) % 2 == 0:
+                if x % 2 == 0:
+                    result.append(str(x))
+print(','.join(result))
 ```
 
 **Question 13**
@@ -263,6 +247,16 @@ Then, the output should be:
 LETTERS 10
 DIGITS 3
 
+```python
+prompt = input('Enter text with numbers, letters, and characters: ')
+
+letters, digits = 0, 0
+for c in prompt:
+    letters += 1 if c.isalpha() else 0
+    digits += 1 if c.isdigit() else 0
+
+print(f'{letters=}, {digits=}')
+```
 
 **Question 14**
 
@@ -273,6 +267,21 @@ Then, the output should be:
 UPPER CASE 1
 LOWER CASE 9
 
+```python
+prompt = input().strip()
+upper, lower = 0, 0
+
+for char in prompt:
+    if char.isupper():
+        upper += 1
+    elif char.islower():
+        lower += 1
+    else:
+        pass
+
+print("UPPER CASE " + str(upper))
+print("LOWER CASE " + str(lower))
+```
 
 **Question 15**
 
@@ -282,6 +291,13 @@ Suppose the following input is supplied to the program:
 Then, the output should be:
 11106
 
+```python
+value = int(input('Enter a number: '))
+
+expr = 'a+aa+aaa+aaaa'.replace('a', str(value))
+
+print(eval(expr))
+```
 
 **Question 16**
 
@@ -291,7 +307,13 @@ Suppose the following input is supplied to the program:
 Then, the output should be:
 1,3,5,7,9
 
+```python
+prompt = [int(x) for x in input('Enter a sequence of comma seperated numbers: ').split(',')]
 
+squares = [n**2 for n in prompt if n % 2]
+
+print(squares)
+```
 **Question 17**
 
 Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
@@ -307,7 +329,19 @@ D 100
 Then, the output should be:
 500
 
+```python
+account = 0
+while True:
+    next_msg = input('enter "D x" to deposit and "W x" to withdraw, where x is any positive integer: ')
+    if next_msg.startswith('D'):
+        account += int(next_msg[2:])
+    elif next_msg.startswith('W'):
+        account -= int(next_msg[2:])
+    else:
+        break
 
+print(account)
+```
 **Question 18**
 
 A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
@@ -325,7 +359,36 @@ ABd1234@1,a F1#,2w3E\*,2We3345
 Then, the output of the program should be:
 ABd1234@1
 
+```python
+special_characters = ['$', '#', '@']
 
+
+prompt = input('Enter a comma seperated list of passwords (no spaces): ').split(',')
+valid_passwords = []
+for p in prompt:
+    req_lower, req_upper, req_number, req_special = False, False, False, False
+    valid = False
+
+    if not (len(p) >= 6 and len(p) <= 12):
+        break
+
+    for c in p:
+        if c.isupper():
+            req_upper = True
+        elif c.islower():
+            req_lower = True
+        elif c.isdigit():
+            req_number = True
+        elif c in special_characters:
+            req_special = True
+        if req_upper and req_lower and req_number and req_special:
+            valid = True
+            valid_passwords.append(p)
+            break
+        print()
+
+print(valid_passwords)
+```
 **Question 19**
 
 You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
@@ -342,11 +405,53 @@ Json,21,85
 Then, the output of the program should be:
 [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
 
+```python
+records = []
+
+get_next = (msg for msg in ['mike,22,40', 'mike,30,50', 'mike,40,40', 'mike,23,40', 'mike,23,50', 'mike,30,40','april,12,15', 'april,1,15', 'april,30,15', ''])
+
+while True:
+    #prompt = input('Enter Name, Age, and height (comma seperated): ')
+    prompt = next(get_next)
+    if prompt == '':
+        break
+    else:
+        records.append(tuple(prompt.split(',')))
+
+records.sort(key=lambda x: x[2])
+records.sort(key=lambda x: x[1])
+records.sort(key=lambda x: x[0])
+
+#gpt:
+records.sort(key=lambda x: (x[0], int(x[1]), int(x[2])))
+
+
+print(records)
+```
 
 **Question 20**
 
 Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
 
+```python
+class nums_div_7:
+    def __init__(self, maximum):
+        self.num = 0
+        self.max = maximum
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.num = self.num + 7
+        if self.num > self.max:
+            raise StopIteration
+        return self.num
+
+n = int(input('Enter a positive number: '))
+for i in nums_div_7(n):
+    print(i)
+```
 
 **Question 21**
 
@@ -366,6 +471,22 @@ RIGHT 2
 Then, the output of the program should be:
 2
 
+```python
+from math import sqrt
+
+UP = 5
+DOWN = 3
+LEFT = 3
+RIGHT = 2
+
+y_dir = abs(UP - DOWN)
+x_dir = abs(RIGHT - LEFT)
+
+distance = sqrt(x_dir ** 2 + y_dir ** 2)
+
+print("distance: " + str(round(distance)))
+print("\n\n")
+```
 
 **Question 22**
 
@@ -385,11 +506,27 @@ choosing:1
 or:2
 to:1
 
+```python
+words = {}
+line = "New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3."
+
+for word in line.split():
+    words[word] = words.get(word,0) + 1
+
+wordlist = sorted(words.keys())
+
+for w in wordlist:
+    print("%s:%d" % (w,words[w]))
+```
 
 **Question 23**
 
     Write a method which can calculate square value of number
 
+```python
+def square_num(n):
+    return n ** 2
+```
 
 **Question 24**
 
@@ -398,160 +535,336 @@ to:1
     And add document for your own function
     
 
+```python
+print(f'abs(num)\n{abs.__doc__}\n')
+print(f'int(string)\n{int.__doc__}\n')
+print(f'input(string)\n{input.__doc__}\n')
+```
+
 **Question 25**
 
     Define a class, which have a class parameter and have a same instance parameter.
 
+```python
+class MyClass:
+    param = "Class" # Class parameter
+
+    def __init__(self, param):
+        self.param = param # Instance Parameter
+
+myobject = MyClass("Instance")
+print(MyClass.param) # Output: Class
+print(myobject.param) # Output: Instance
+```
 
 **Question 26**
 
 Define a function which can compute the sum of two numbers.
 
+```python
+def sum(a, b):
+    return a+b
+```
 
 **Question 27**
 
 Define a function that can convert a integer into a string and print it in console.
 
+```python
+def convert_and_print(n):
+    print(str(n))
+```
 
 **Question 28**
 
 Define a function that can convert a integer into a string and print it in console.
 
+```python
+def convert_and_print(n):
+    print(str(n))
+```
 
 **Question 29**
 
 Define a function that can receive two integral numbers in string form and compute their sum and then print it in console.
 
+```python
+def sum(a_string, b_string):
+    return int(a_string) + int(b_string)
+```
 
 **Question 30**
 
 Define a function that can accept two strings as input and concatenate them and then print it in console.
 
+```python
+def cat(a_string, b_string)
+    print(str(a_string) + str(b_string))
+```
 
 **Question 31**
 
 Define a function that can accept two strings as input and print the string with maximum length in console. If two strings have the same length, then the function should print al l strings line by line.
 
+```python
+def print_longest_or_both(string1, string2):
+    print(string1 if len(string1) >= len(string2) else string2)
+    print(string2+'\n' if len(string1) == len(string2) else '', end='')
+```
 
 **Question 32**
 
 Define a function that can accept an integer number as input and print the "It is an even number" if the number is even, otherwise print "It is an odd number".
 
+```python
+def print_oddoreven(n)
+    print('It is an even number' if not n % 2 else 'It is an odd number.'
+```
 
 **Question 33**
 
 Define a function which can print a dictionary where the keys are numbers between 1 and 3 (both included) and the values are square of keys.
 
 
+```python
+def dictionary_print():
+    mydict = {x: x*x for x in range(1, 4)}
+    print(mydict)
+```
+
 **Question 34**
 
 Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
 
+```python
+def dictionary_print():
+    mydict = {x: x*x for x in range(1, 21)}
+    print(mydict)
+```
 
 **Question 35**
 
 Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the values only.
 
+```python
+def dictionary_print():
+    mydict = {x: x*x for x in range(1, 21)}
+    values = [str(x) for x in list(mydict.values())]
+    print(' '.join(values))
+```
 
 **Question 36**
 
 Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
 
+```python
+def dictionary_print():
+    mydict = {x: x*x for x in range(1, 21)}
+    values = [str(x) for x in list(mydict.keys())]
+    print(' '.join(values))
+```
 
 **Question 37**
 
 Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
 
+```python
+def list_print():
+    li = [x for x in range(1, 21)]
+    print(li)
+```
 
 **Question 38**
 
 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the first 5 elements in the list.
 
+```python
+def list_print():
+    li = [x*x for x in range(1, 21)]
+    print(li[0:5])
+```
 
 **Question 39**
 
 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the last 5 elements in the list.
 
+```python
+def list_print():
+    li = [x*x for x in range(1, 21)]
+    print(li[-5::])
+```
 
 **Question 40**
 
 Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print all values except the first 5 elements in the list.
 
+```python
+def list_print():
+    li = [x*x for x in range(1, 21)]
+    print(li[5::])
+```
 
 **Question 41**
 
 Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included). 
 
+```python
+def tuple_gen():
+    t = tuple(x*x for x in range(1, 21))
+```
 
 **Question 42**
 
 With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line. 
 
+```python
+# If len of prompt is odd we will choose not to print the middle value, as the problem doesn't specify but that's the best guess for 'half'
+prompt = (1,2,3,4,5,6,7,8,9,10)
+print(prompt[0:len(prompt) // 2])
+print(prompt[len(prompt) // 2 + len(prompt) % 2::])
+```
 
 **Question 43**
 
 Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10). 
 
+```python
+prompt = (1,2,3,4,5,6,7,8,9,10)
+t = tuple(x for x in prompt if x % 2 == 0)
+print(t)
+```
 
 **Question 44**
 
 Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No". 
 
+```python
+prompt = input('Enter yes, Yes, or YES: ')
+print('Yes' if prompt == 'yes' or prompt == 'Yes' or prompt == 'YES' else 'No')
+```
 
 **Question 45**
 
 Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
 
+```python
+prompt = [1,2,3,4,5,6,7,8,9,10]
+
+li = list(filter(lambda x: x % 2 == 0, prompt))
+```
 
 **Question 46**
 
 Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
 
+```python
+prompt = [1,2,3,4,5,6,7,8,9,10]
+
+result = list(map(lambda x: x*x, prompt))
+```
 
 **Question 47**
 
 Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
 
+```python
+prompt = [1,2,3,4,5,6,7,8,9,10]
+
+result = filter(lambda x: x % 2 == 0, prompt)
+result = list(map(lambda x: x*x, li))
+```
 
 **Question 48**
 
 Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
 
+```python
+prompt = [x for x in range(1, 21)]
+
+result = list(filter(lambda x: x % 2 == 0, prompt))
+```
 
 **Question 49**
 
 Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
 
+```python
+prompt = [x for x in range(1, 21)]
+
+result = list(map(lambda x: x*x, prompt))
+```
 
 **Question 50**
 
 Define a class named American which has a static method called printNationality.
 
+```python
+class American:
+    def printNationality(self):
+        print(type(self))
+```
 
 **Question 51**
 
 Define a class named American and its subclass NewYorker. 
 
+```python
+class American:
+    def printNationality(self):
+        print(type(self))
+
+class NewYorker(American):
+    def printNationality(self):
+        print('Get Outta Here!')
+```
 
 **Question 52**
 
 Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area. 
 
+```python
+class Circle:
+    def __init__(self, r):
+        self.radius = r
+```
 
 **Question 53**
 
 Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area. 
 
+```python
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+```
 
 **Question 54**
 
 Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
 
+```python
+class Shape:
+    def __init__(self):
+        self.area = 0
+
+    def print_area(self):
+        print(self.area)
+
+class Square(Shape):
+    def __init__(self, length):
+        self.__length = length
+        self.__width = length
+        self.__area = self.length * self.width
+```
 
 **Question 55**
 
 Please raise a RuntimeError exception.
 
+```python
+raise(RuntimeError)
+```
 
 **Question 56**
 
