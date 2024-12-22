@@ -870,11 +870,27 @@ raise(RuntimeError)
 
 Write a function to compute 5/0 and use try/except to catch the exceptions.
 
+```python
+a, b = 5, 0
+try:
+    print(a / b)
+except ZeroDivisionError:
+    print('Division by zero is not advised.')
+except:
+    print('basic maths broke.')
+```
 
 **Question 57**
 
 Define a custom exception class which takes a string message as attribute.
 
+```python
+class myexception(Exception):
+    def __init__(self, msg):
+        print(msg)
+
+raise myexception('ohno!')
+```
 
 **Question 58**
 
@@ -892,6 +908,16 @@ john
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+import re
+
+prompt = input('Enter an email address: ')
+pattern = r"(.*)@+(.*)\.+(.*)"
+
+match = re.search(pattern, prompt, re.DOTALL)
+
+print(match[1] if match else 'Email format not recognized')
+```
 
 **Question 59**
 
@@ -909,6 +935,16 @@ google
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+import re
+
+prompt = input('Enter an email address: ')
+pattern = r"(.*)@+(.*)\.+(.*)"
+
+match = re.search(pattern, prompt, re.DOTALL)
+
+print(match[2] if match else 'Email format not recognized')
+```
 
 **Question 60**
 
@@ -926,6 +962,16 @@ Then, the output of the program should be:
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+prompt = input('Enter a sequence of words separated by whitespace: ').split( )
+result = []
+
+for word in prompt:
+    if word.isdigit():
+        result.append(word)
+
+print(result)
+```
 
 **Question 61**
 
@@ -933,18 +979,29 @@ In case of input data being supplied to the question, it should be assumed to be
 
 Print a unicode string "hello world".
 
+```python
+print("hello world") # Python 3 is unicode by default
+```
 
 **Question 62**
 
 Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
 
+```python
+# Will throw an exception if non-ascii chars are present
+prompt = input('Enter some ascii text: ').encode('ascii')
+
+result = prompt.encode('utf-8')
+```
 
 **Question 63**
 
 
 Write a special comment to indicate a Python source code file is in unicode.
 
-
+```python
+# -*- coding: utf-8 -*-
+```
 **Question 64**
 
 
@@ -961,6 +1018,15 @@ Then, the output of the program should be:
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+prompt = int(input('Enter an integer:'))
+result = 0.0
+
+for i in range(1, prompt + 1):
+    result += i / (i+1)
+
+print(f'{result:1.3}')
+```
 
 **Question 65**
 
@@ -983,6 +1049,16 @@ Then, the output of the program should be:
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+prompt = int(input('Enter a positive integer: '))
+def func(n):
+    if n == 0:
+        return 1
+    else:
+        return func(n-1) + 100
+
+print(func(prompt))
+```
 
 **Question 66**
 
@@ -1008,6 +1084,18 @@ Then, the output of the program should be:
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+```python
+prompt = int(input('Enter a positive integer: '))
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(prompt))
+```
 
 **Question 67**
 
@@ -1030,7 +1118,27 @@ Then, the output of the program should be:
 
 0,1,1,2,3,5,8,13
 
+```python
+prompt = int(input('Enter a positive integer: '))
+def fibonacci_sequence(n):
+    sequence = []
+    def fibonacci(n):
+        if n == 0:
+            sequence.append(0)
+            return 1
+        elif n == 1:
+            fibonacci(n-1)
+            sequence.append(1)
+            return 1
+        else:
+            fibonacci(n-1)
+            sequence.append(sequence[n-2] + sequence[n-1])
+    fibonacci(n)
+    return sequence
 
+result = fibonacci_sequence(prompt)
+print(','.join([str(x) for x in result]))
+```
 
 **Question 68**
 
@@ -1046,6 +1154,19 @@ Then, the output of the program should be:
 
 0,2,4,6,8,10
 
+```python
+prompt = int(input('Enter a positive integer: '))
+
+def even_gen(n):
+    i = 0
+    while i <= n:
+        yield i
+        i += 2
+result = []
+for i in even_gen(prompt):
+    result.append(i)
+print(','.join([str(x) for x in result]))
+```
 
 **Question 69**
 
@@ -1061,6 +1182,19 @@ Then, the output of the program should be:
 
 0,35,70
 
+```python
+prompt = int(input('Enter a positive integer: '))
+
+def div35_gen(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 35
+result = []
+for i in div35_gen(prompt):
+    result.append(i)
+print(','.join([str(x) for x in result]))
+```
 
 **Question 70**
 
@@ -1068,7 +1202,10 @@ Then, the output of the program should be:
 
 Please write assert statements to verify that every number in the list [2,4,6,8] is even.
 
-
+```python
+prompt = [2,4,6,8]
+assert(all([x % 2 == 0 for x in prompt]))
+```
 
 
 **Question 71**
@@ -1085,6 +1222,10 @@ Then, the output of the program should be:
 
 38
 
+```python
+prompt = input('Enter an expresion (ex. 35+3): ')
+print(eval(prompt))
+```
 
 **Question 72**
 
@@ -1092,13 +1233,62 @@ Then, the output of the program should be:
 Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
 
 
+```python
+def mid(x, y):
+    return (x + y) // 2
+
+def binary_search(num_to_find, prompt):
+    breadth = [0, len(prompt) - 1]
+    index = mid(*(breadth))
+    found = True
+    while num_to_find != prompt[index]:
+        if breadth[0] == breadth[1]:
+            # value not in list, this index was just checked
+            found = False
+            break
+        if num_to_find < prompt[index]:
+            difference = breadth[1] - breadth[0]
+            breadth[1] = breadth[0] + max(difference // 2, 1)
+        else: 
+            difference = breadth[1] - breadth[0]
+            breadth[0] = breadth[0] + max(difference // 2, 1)
+        index = mid(*(breadth))
+        print(index)
+        print(f'{num_to_find=} {prompt[index]=}')
+
+    return found, index
+```
 
 **Question 73**
 
 
 Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
 
+```python
+def mid(x, y):
+    return (x + y) // 2
 
+def binary_search(num_to_find, prompt):
+    breadth = [0, len(prompt) - 1]
+    index = mid(*(breadth))
+    found = True
+    while num_to_find != prompt[index]:
+        if breadth[0] == breadth[1]:
+            # value not in list, this index was just checked
+            found = False
+            break
+        if num_to_find < prompt[index]:
+            difference = breadth[1] - breadth[0]
+            breadth[1] = breadth[0] + max(difference // 2, 1)
+        else: 
+            difference = breadth[1] - breadth[0]
+            breadth[0] = breadth[0] + max(difference // 2, 1)
+        index = mid(*(breadth))
+        print(index)
+        print(f'{num_to_find=} {prompt[index]=}')
+
+    return found, index
+```
 
 **Question 74**
 
@@ -1106,22 +1296,33 @@ Please write a binary search function which searches an item in a sorted list. T
 Please generate a random float where the value is between 10 and 100 using Python math module.
 
 
+```python
+import random
 
+result = random.random()*80+10
+```
 
 **Question 75**
 
 
 Please generate a random float where the value is between 5 and 95 using Python math module.
 
+```python
+import random
 
-
+result = random.random()*90+5
+```
 
 **Question 76**
 
 
 Please write a program to output a random even number between 0 and 10 inclusive using random module and list comprehension.
 
+```python
+import random
 
+print(random.choice([x*2 for x in range(0, 6)]))
+```
 
 
 **Question 77**
@@ -1129,15 +1330,20 @@ Please write a program to output a random even number between 0 and 10 inclusive
 
 Please write a program to output a random number, which is divisible by 5 and 7, between 0 and 10 inclusive using random module and list comprehension.
 
-
-
+```python
+print(0)
+```
 
 **Question 78**
 
 
 Please write a program to generate a list with 5 random numbers between 100 and 200 inclusive.
 
+```python
+import random
 
+result = [random.randint(100, 200) for x in range(5)]
+```
 
 
 **Question 79**
@@ -1145,7 +1351,11 @@ Please write a program to generate a list with 5 random numbers between 100 and 
 
 Please write a program to randomly generate a list with 5 even numbers between 100 and 200 inclusive.
 
+```python
+import random
 
+result = [random.randint(50, 100) * 2 for x in range(5)]
+```
 
 
 **Question 80**
@@ -1153,7 +1363,11 @@ Please write a program to randomly generate a list with 5 even numbers between 1
 
 Please write a program to randomly generate a list with 5 numbers, which are divisible by 5 and 7 , between 1 and 1000 inclusive.
 
+```python
+import random
 
+result = [random.randint(0, 1000 // 35) * 35 for x in range(5)]
+```
 
 
 **Question 81**
@@ -1161,7 +1375,11 @@ Please write a program to randomly generate a list with 5 numbers, which are div
 
 Please write a program to randomly print a integer number between 7 and 15 inclusive.
 
+```python
+import random
 
+print(random.randint(7, 15))
+```
 
 
 **Question 82**
@@ -1170,14 +1388,31 @@ Please write a program to randomly print a integer number between 7 and 15 inclu
 Please write a program to compress and decompress the string "hello world!hello world!hello world!hello world!".
 
 
+```python
+import zlib
 
+def compress_string(s):
+    return zlib.compress(s.encode('utf-8'))
+
+def decompress_string(s):
+    return zlib.decompress(s).decode('utf-8')
+
+prompt = "hello world!hello world!hello world!hello world!"
+prompt = compress_string(prompt)
+prompt = decompress_string(prompt)
+```
 
 **Question 83**
 
 
 Please write a program to print the running time of execution of "1+1" for 100 times.
 
+```python
+import timeit
 
+execution_time = timeit.timeit(stmt='1+1', number=100)
+print(execution_time)
+```
 
 
 **Question 84**
@@ -1185,7 +1420,13 @@ Please write a program to print the running time of execution of "1+1" for 100 t
 
 Please write a program to shuffle and print the list [3,6,7,8].
 
+```python
+import random
 
+prompt = [3,6,7,8]
+random.shuffle(prompt)
+print(prompt)
+```
 
 
 **Question 85**
@@ -1193,7 +1434,13 @@ Please write a program to shuffle and print the list [3,6,7,8].
 
 Please write a program to shuffle and print the list [3,6,7,8].
 
+```python
+import random
 
+prompt = [3,6,7,8]
+random.shuffle(prompt)
+print(prompt)
+```
 
 
 **Question 86**
@@ -1201,17 +1448,36 @@ Please write a program to shuffle and print the list [3,6,7,8].
 
 Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
 
+```python
+subject = ['I', 'You']
+verb = ['Play', 'Love']
+obj = ['Hockey', 'Football']
+
+result = []
+for s in subject:
+    for t in verb:
+        for u in obj:
+            result.append(s+' '+ t +' '+ u +'.')
+```
 
 **Question 87**
 
 Please write a program to print the list after removing delete even numbers in [5,6,77,45,22,12,24].
 
+```python
+prompt = [5,6,77,45,22,12,24]
+print([x for x in prompt if x % 2 == 1])
+```
 
 **Question 88**
 
 
 By using list comprehension, please write a program to print the list after removing delete numbers which are divisible by 5 and 7 in [12,24,35,70,88,120,155].
 
+```python
+prompt = [12,24,35,70,88,120,155]
+print([x for x in prompt if x % 35 == 0])
+```
 
 **Question 89**
 
@@ -1219,40 +1485,88 @@ By using list comprehension, please write a program to print the list after remo
 By using list comprehension, please write a program to print the list after removing the 0th, 2nd, 4th,6th numbers in [12,24,35,70,88,120,155].
 
 
+```python
+prompt = [12,24,35,70,88,120,155]
+print([x for i, x in enumerate(prompt) if i not in [0,2,4,6]])
+```
+
 **Question 90**
 
 
 By using list comprehension, please write a program generate a 3\*5\*8 3D array whose each element is 0.
 
+```python
+result = [[[0 for _ in range(8)] for _ in range(5)] for _ in range(3)]
+```
 
 **Question 91**
 
 
 By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].
 
+```python
+prompt = [12,24,35,70,88,120,155]
+print([x for i, x in enumerate(prompt) if i not in [0,4,5]])
+```
 
 **Question 92**
 
 
 By using list comprehension, please write a program to print the list after removing the value 24 in [12,24,35,24,88,120,155].
 
+```python
+prompt = [12,24,35,70,88,120,155]
+print([x for x in prompt if x != 24])
+```
 
 **Question 93**
 
 
 With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a program to make a list whose elements are intersection of the above given lists.
 
+```python
+prompt1 = [1,3,6,78,35,55]
+prompt2 = [12,24,35,24,88,120,155]
+
+print(set(prompt1) & set(prompt2))
+```
 
 **Question 94**
 
 With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all duplicate values with original order reserved.
 
+```python
+prompt = [12,24,35,24,88,120,155,88,120,155]
+li = prompt[::-1] # reverse the list, we will unreverse it after the loop
+
+pointer = 0
+while pointer < len(li):
+    if li[pointer] in li[(pointer + 1):]:
+        li.remove(li[pointer])
+    else:
+        pointer += 1
+
+print(li)
+```
 
 **Question 95**
 
 
 Define a class Person and its two child classes: Male and Female. All classes have a method "getGender" which can print "Male" for Male class and "Female" for Female class.
 
+```python
+class Person:
+    getGender(self):
+        return None
+
+class Male(Person):
+    getGender(self):
+        print('Male')
+
+class Female(Person):
+    getGender(self):
+        print('Female')
+```
 
 **Question 96**
 
@@ -1274,6 +1588,17 @@ d,1
 g,1
 f,1
 
+```python
+from collections import defaultdict
+
+prompt = input('Enter some words: ')
+result = defaultdict(int)
+for c in prompt:
+    if c.isalpha():
+        result[c] += 1
+for k, v in result.items():
+    print(f'{k},{v}')
+```
 
 **Question 97**
 
@@ -1289,6 +1614,10 @@ Then, the output of the program should be:
 
 ris etov ot esir
 
+```python
+prompt = input('Enter a string: ')
+print(''.join(list(prompt[::-1])))
+```
 
 **Question 98**
 
@@ -1304,13 +1633,25 @@ Then, the output of the program should be:
 
 Helloworld
 
+```python
+s = input('Enter a string: ')
+s = s[::2]
+print(s)
+```
 
 **Question 99**
 
 
 Please write a program which prints all permutations of [1,2,3]
 
+```python
+import itertools
 
+prompt = [1, 2, 3]
+combinations = itertools.permutations(mylist)
+
+print(list(combinations))
+```
 
 **Question 100**
 
@@ -1319,3 +1660,25 @@ Write a program to solve a classic ancient Chinese puzzle:
 We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
 
 
+```python
+# Given variables (constants)
+heads, legs = 35, 94
+
+# Verify that there is a solution
+assert(legs % 2 == 0)
+assert(legs >= heads * 2 and legs <= heads * 4)
+
+# Assume all are chickens
+chickens, rabbits = heads, 0
+
+# Calculation for number of legs
+get_legs = lambda chickens, rabbits: chickens * 2 + (rabbits * 4)
+
+# Remove a chicen and add a rabbit until given # of legs == calculated # legs
+while get_legs(chickens, rabbits) < legs:
+    chickens -= 1
+    rabbits += 1
+
+print(f'{chickens} chickens, {rabbits} rabbits.')
+print(f'heads = {chickens + rabbits}, legs = {get_legs(chickens, rabbits)}')
+```
