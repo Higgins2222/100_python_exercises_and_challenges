@@ -1,0 +1,667 @@
+
+#----------------------------------------#
+Divisible by 3 but not 4
+level 1
+Tags: Loops, (List Comprehension), Basic Math
+
+Question
+Write a program to find all numbers between 1000 and 1500 (inclusive) that are divisible by 3 but not a multiple of 4. Print them in a comma-separated sequence.
+
+#----------------------------------------#
+Factorial Calculation
+level 1
+Tags: Loops, Basic Math
+
+Question
+Write a function that calculates the factorial of a given number using a loop, and returns the result
+
+#----------------------------------------#
+Sum of Squares
+level 1
+Tags: Loops, Basic Math
+
+Question
+Write a function that finds the sum of squares of all integers from 1 to n. return the sum.
+
+#----------------------------------------#
+Count Vowels in a String
+level 1
+Tags: Dictionaries
+
+Question
+Write a program that takes a string and counts the number of vowels (a, e, i, o, u) in it. Output as a dictionary.
+#----------------------------------------#
+Find the Largest Number in a List
+level 1
+
+Question
+Write a program that finds and prints the largest number in a given list of integers.
+#----------------------------------------#
+Factorial of a Number
+level 1
+Tags: loops, math, (recursion), integers
+
+Question
+Write a program that calculates the factorial of a given integer N.
+#----------------------------------------#
+Find the Length of a List
+
+Question
+Write a program that accepts a list of elements and prints the number of elements in the list using the built-in len() function.
+
+    Input: [1,2,3,4,5]
+    Output: 5
+#----------------------------------------#
+Matrix Transpose
+level 2
+Tags: 2D arrays, nested loops, matrices, (lists)
+
+Question
+Write a program that takes a 2D matrix (X rows, Y columns) as input and outputs its transpose (Y rows, X columns).
+
+
+#----------------------------------------#
+Count Even and Odd Numbers
+Level: 1
+Tags: lists, loops, math, conditionals
+
+Question
+Write a program that accepts a list of N integers as input and counts how many numbers are even and how many are odd.
+#----------------------------------------#
+Check Palindrome
+level 2
+
+Question
+Write a program that checks if a given string is a palindrome (reads the same forwards and backwards). Output the given string and a true false value.
+#----------------------------------------#
+Pattern Printing
+Level: 1
+Tags: loops, strings, nested loops, conditionals
+
+Question
+Write a program that takes an integer N as input and prints a right-angled triangle pattern of stars (*) of height N.
+output:
+    *
+    * *
+    * * *
+#----------------------------------------#
+Factorial Calculation
+level 2
+Tags: Recursion, Basic Math
+
+Question
+Write a function that calculates the factorial of a given number using recursion, and returns the result
+
+
+#----------------------------------------#
+Sum of Digits
+level 2
+
+Question
+Write a program that takes a number and calculates the sum of its digits.
+
+
+
+#----------------------------------------#
+Prime Numbers Between Two Numbers
+level 2
+
+
+Question
+Write a function that finds all prime numbers between two given numbers (inclusive) and returns them as a list
+
+
+#----------------------------------------#
+Multiplication Table
+level 2
+Tags: Text Formatting
+
+Question
+Write a program that prints the multiplication table for a number, from 1 to 10.
+
+
+#----------------------------------------#
+Fibonacci Sequence
+level 1
+
+Question
+Write a program that prints the Fibonacci sequence up to the nth term, where n is a positive integer.
+
+
+#----------------------------------------#
+Even or Odd
+level 1
+
+Question
+Write a program that takes a number and prints whether it is even or odd.
+
+
+
+
+#----------------------------------------#
+Count the Number of Words in a Sentence
+level 2
+
+Question
+Write a program that takes a sentence and counts the number of words.
+
+#----------------------------------------#
+Reverse a String
+level 1
+
+Question
+Write a program that takes a string and reverses it.
+
+
+#----------------------------------------#
+Reverse a String
+level 1
+Tags: strings, basic functions, lists
+
+Question
+Write a program that takes a string as input and outputs its reverse.
+
+#----------------------------------------#
+Sum of Rows and Columns
+level 2
+Tags: 2D arrays, nested loops, (basic functions), matrices
+
+Question
+Create a program that reads a 2D array (matrix) of size X×Y and calculates the sum of each row and column.
+
+
+
+#----------------------------------------#
+Multiplication Table
+Level: 1
+Tags: loops, integers, math, (nested loops), formatting
+
+Question
+Write a program that takes an integer N and prints a multiplication table for numbers from 1 to N.
+
+#----------------------------------------#
+
+
+
+#----------------------------------------#
+Check Prime Number
+level 2
+Tags: loops, math, conditionals, (recursion), integers
+
+Question
+Write a program that takes an integer as input and determines if it is a prime number.
+
+
+#----------------------------------------#
+Fibonacci Sequence
+Level: 2
+Tags: loops, math, integers, (recursion), (memoization)
+
+Question
+Write a program that generates the first N numbers in the Fibonacci sequence.
+
+#----------------------------------------#
+Number of Digits and Sum of Digits
+Level: 1
+Tags: integers, loops, math, strings
+
+Question
+Write a program that takes an integer as input and outputs the number of digits and the sum of the digits.
+
+
+#----------------------------------------#
+Find Maximum and Minimum
+Level: 1
+Tags: lists, loops, math, (built-in functions)
+
+Question
+Write a program that accepts a list of N integers and finds the maximum and minimum numbers in the list.
+
+#----------------------------------------#
+Palindrome Check
+Level: 1
+Tags: strings, conditionals, loops, (recursion)
+
+Question
+Write a program that takes a string as input and checks whether it is a palindrome (reads the same forward and backward).
+#----------------------------------------#
+List of Squares
+Level: 1
+Tags: lists, loops, math, integers
+
+Question
+Write a program that takes an integer N and generates a list containing the squares of numbers from 1 to N.
+
+
+#----------------------------------------#
+Sum of Digits in a Range
+Level: 2
+Tags: loops, math, integers, range operations
+
+Question
+Write a program that calculates the sum of the digits for all numbers between two given integers A and B.
+#----------------------------------------#
+Remove Duplicates from a List
+
+Question
+Write a program that takes a list of integers and removes duplicate elements, maintaining the original order.
+#----------------------------------------#
+Count Vowels and Consonants
+
+Question
+Write a program that accepts a string and counts the number of vowels and consonants in the string.
+#----------------------------------------#
+Replace All Spaces
+
+Question
+Write a program that takes a sentence as input and replaces all spaces with underscores (_).
+#----------------------------------------#
+Convert Temperature Units
+
+Question
+Write a program that converts a given temperature from Celsius to Fahrenheit and vice versa.
+Formula:
+
+    Celsius to Fahrenheit: F = C * 9/5 + 32
+    Fahrenheit to Celsius: C = (F - 32) * 5/9
+#----------------------------------------#
+
+#----------------------------------------#
+Sum of Nested Lists
+level 2
+
+Question
+Write a function that calculates the sum of all numbers in a nested list structure. The list can contain integers, other lists, or both.
+
+
+#----------------------------------------#
+Reverse Words in a Sentence
+level 2
+
+Question
+Write a function to reverse the order of words in a sentence while keeping the words themselves intact.
+
+#----------------------------------------#
+Character Frequency Counter
+
+Question
+Write a function that takes a string and returns a dictionary with the frequency of each character, ignoring spaces.
+
+Example:
+Input: "hello world"
+Output: {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1}
+#----------------------------------------#
+Letter Combinations of a Phone Number
+
+Question
+Write a function that takes a string representing a phone number's digits (e.g., "23") and returns all possible letter combinations the number could represent based on a standard phone keypad. For example:
+
+Input: "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+You can assume the input digits are between 2 and 9. Use recursion to solve the problem.
+#----------------------------------------#
+Pascal's Triangle Generation
+
+Question
+Write a function to generate Pascal's Triangle up to a given number of rows. For example, if the input is 5, the output should be:
+
+[
+ [1],
+ [1, 1],
+ [1, 2, 1],
+ [1, 3, 3, 1],
+ [1, 4, 6, 4, 1]
+]
+Each row is constructed by summing adjacent elements from the previous row. Solve this iteratively or recursively.
+#----------------------------------------#
+Fibonacci Generator
+
+Question
+Create a generator function that yields numbers in the Fibonacci sequence. For example:
+
+fib = fibonacci_generator()
+print(next(fib))  # 0
+print(next(fib))  # 1
+print(next(fib))  # 1
+print(next(fib))  # 2
+print(next(fib))  # 3
+It should continue indefinitely or up to a given limit if specified.
+
+#----------------------------------------#
+Matrix Spiral Traversal
+
+Question
+Write a function that takes a 2D matrix and returns all elements in a spiral order. For example:
+
+Input: [[1, 2, 3], 
+        [4, 5, 6], 
+        [7, 8, 9]]
+Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+This problem will test your ability to manage indices and boundaries effectively.
+
+#----------------------------------------#
+Valid Parentheses Check
+
+Question
+Write a function that takes a string of parentheses (and potentially other characters) and determines whether the parentheses are balanced. For example:
+
+Input: "()[]{}"
+Output: True
+
+Input: "(]"
+Output: False
+
+Input: "{[]}"
+Output: True
+You can extend this to check for valid combinations of brackets and braces ([], {}, ()) using a stack.
+
+
+#----------------------------------------#
+Word Ladder Transformation
+
+Question
+Write a function that takes two words (start and end) and a list of valid words (wordList) and returns the minimum number of transformations needed to convert start into end. A transformation changes one letter at a time, and each transformed word must exist in the wordList.
+#----------------------------------------#
+1. Subset Generation
+
+Tags: recursion, combinatorics
+Write a function that generates all subsets of a given list of integers. The function should not use Python's built-in libraries for combinations.
+Example Input: [1, 2, 3]
+Example Output: [[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]
+#----------------------------------------#
+2. Shortest Path in an Unweighted Graph
+
+Tags: graph traversal, BFS, adjacency list
+Given an unweighted, undirected graph represented as an adjacency list and two nodes A and B, find the shortest path between them.
+Input:
+
+graph = {
+    "A": ["B", "C"],
+    "B": ["A", "D", "E"],
+    "C": ["A", "F"],
+    "D": ["B"],
+    "E": ["B", "F"],
+    "F": ["C", "E"]
+}
+
+Start: A, End: F
+Output: ["A", "C", "F"]
+#----------------------------------------#
+3. N-Queens Problem
+
+Tags: recursion, backtracking
+Place N queens on an N×N chessboard so that no two queens attack each other. Return one valid board configuration.
+Input: N = 4
+Output:
+
+[
+    [".", "Q", ".", "."],
+    [".", ".", ".", "Q"],
+    ["Q", ".", ".", "."],
+    [".", ".", "Q", "."]
+]
+
+4. Modular Exponentiation
+
+Tags: modular arithmetic, recursion
+Implement a function to compute (base^exp) % mod efficiently using recursion.
+Input: base=3, exp=10, mod=7
+Output: 4
+#----------------------------------------#
+5. Find All Palindromic Substrings
+
+Tags: strings, dynamic programming
+Write a function to find and count all palindromic substrings in a given string.
+Input: "abba"
+Output: 6 (palindromic substrings: "a", "b", "b", "a", "bb", "abba")
+#----------------------------------------#
+6. Decode Ways
+
+Tags: recursion, dynamic programming
+A message containing numbers can be decoded to letters (1 -> A, 2 -> B, ..., 26 -> Z). Write a function to count how many ways the message can be decoded.
+Input: "226"
+Output: 3 (Possible decodings: "BZ", "VF", "BBF")
+#----------------------------------------#
+7. Top K Frequent Elements
+
+Tags: priority queues, hashmaps
+Given a list of integers, return the k most frequent elements.
+Input: nums = [1, 1, 1, 2, 2, 3], k = 2
+Output: [1, 2]
+#----------------------------------------#
+8. Valid Parentheses Combinations
+
+Tags: recursion, backtracking
+Write a function to generate all valid parentheses combinations for n pairs of parentheses.
+Input: n = 3
+Output: ["((()))", "(()())", "(())()", "()(())", "()()()"]
+9. Word Ladder
+
+Tags: graph traversal, BFS
+Given two words and a dictionary, find the shortest transformation sequence from the start word to the end word by changing one letter at a time.
+Input:
+Start: "hit", End: "cog", Dictionary: ["hot", "dot", "dog", "lot", "log", "cog"]
+Output: ["hit", "hot", "dot", "dog", "cog"]
+#----------------------------------------#
+10. Subarray Sum Equals K
+
+Tags: hashmaps, math
+Given an array of integers, find the total number of continuous subarrays whose sum equals a given value k.
+Input: nums = [1, 1, 1], k = 2
+Output: 2
+#----------------------------------------#
+11. Generate All Permutations
+
+Tags: recursion, combinatorics
+Write a function to generate all permutations of a list of numbers.
+Input: [1, 2, 3]
+Output: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+#----------------------------------------#
+12. Alien Dictionary
+
+Tags: graph traversal, topological sort
+Given a sorted list of words in an alien language, determine the order of the characters in the alien alphabet.
+Input: ["wrt", "wrf", "er", "ett", "rftt"]
+Output: "wertf"
+#----------------------------------------#
+Unique Pathfinding in a Grid
+
+Question
+Write a function that calculates the number of unique paths from the top-left to the bottom-right of an m x n grid. You can only move down or to the right.
+
+Example:
+Input: m = 3, n = 7  
+Output: 28  
+#----------------------------------------#
+Custom Sorting Logic
+Create a sorting function that sorts a list of words based on the following rules:
+
+Words with fewer vowels come first.
+If two words have the same number of vowels, sort alphabetically.
+Example:
+Input:
+
+css
+Copy code
+["apple", "banana", "pear", "grape"]  
+Output:
+
+css
+Copy code
+["grape", "pear", "banana", "apple"]  
+Good luck! 😊 Let me know if you'd like hints.
+
+#----------------------------------------#
+Check Armstrong Number
+
+Question
+Write a program to check if a given number is an Armstrong number.
+(A number is an Armstrong number if the sum of its digits raised to the power of the number of digits equals the number itself.)
+Example: 153 = 1³ + 5³ + 3³.
+#----------------------------------------#
+Second Largest Element
+
+Question
+Write a program that takes a list of integers as input and finds the second largest element.
+
+#----------------------------------------#
+Largest Rectangle in Histogram
+
+Question
+Given an array representing the heights of bars in a histogram, find the area of the largest rectangle that can be formed within the histogram.
+#----------------------------------------#
+Kth Smallest Element in a Sorted Matrix
+
+Question
+A matrix of integers is sorted row-wise and column-wise. Find the Kth smallest element in the matrix.
+#----------------------------------------#
+Counting Inversions
+
+Question
+Given an array of integers, find the number of inversions. An inversion is a pair of indices (i, j) such that i < j and arr[i] > arr[j].
+#----------------------------------------#
+Longest Increasing Subsequence
+
+Question
+Given an array of integers, find the length of the longest increasing subsequence in the array.
+#----------------------------------------#
+Subset Sum Problem
+
+Question
+Given a set of integers, determine if there is a subset whose sum is equal to a given target sum.
+#----------------------------------------#
+Traveling Salesman Problem (TSP)
+
+Question
+Given a list of cities and distances between them, find the shortest possible route that visits each city exactly once and returns to the starting point.
+#----------------------------------------#
+Maximum Subarray Sum (Kadane’s Algorithm)
+
+Question
+Given an array of integers, find the maximum sum of a contiguous subarray.
+#----------------------------------------#
+0/1 Knapsack Problem
+
+Question
+Given a set of items, each with a weight and a value, and a maximum weight capacity, determine the maximum value that can be obtained by selecting a subset of items that fit within the capacity.
+#----------------------------------------#
+Palindrome Partitioning
+
+Question
+Given a string, partition it into substrings such that each substring is a palindrome, and return the minimum number of cuts needed to split the string.
+#----------------------------------------#
+Matrix Chain Multiplication
+
+Question
+Given a sequence of matrices, determine the most efficient way to multiply them together to minimize the total number of scalar multiplications.
+
+
+#----------------------------------------#
+
+#----------------------------------------#
+15. Sum of Natural Numbers
+
+Question
+Write a program to calculate the sum of the first n natural numbers.
+#----------------------------------------#
+16. Count Digits in a Number
+
+Question
+Write a program that counts how many digits are in a given number.
+#----------------------------------------#
+Find the Common Elements in Two Lists
+
+Question
+Write a program that finds and prints the common elements between two given lists.
+#----------------------------------------#
+Print Multiples of 5 Between 1 and 100
+
+Question
+Write a program that prints all multiples of 5 between 1 and 100.
+#----------------------------------------#
+Check If a Number is a Perfect Number
+
+Question
+Write a program to check if a number is a perfect number. (A perfect number is a number that is equal to the sum of its proper divisors.)
+#----------------------------------------#
+Print Pyramid Pattern
+
+Question
+Write a program that prints a pyramid pattern using asterisks (*) based on a given number of rows.
+
+These problems should help reinforce basic programming concepts and allow for simple solutions without advanced algorithms or optimizations.
+
+#----------------------------------------#
+Sorting Numbers in Ascending Order
+
+Question
+Write a program that accepts a comma-separated sequence of numbers and sorts them in ascending order.
+For example:
+
+    Input: 5,3,8,1
+    Output: 1,3,5,8
+#----------------------------------------#
+Find the Maximum and Minimum of a List
+
+Question
+Write a program that takes a list of integers and prints the maximum and minimum values using the built-in max() and min() functions.
+
+    Input: 2,5,1,9,4
+    Output: Max: 9, Min: 1
+#----------------------------------------#
+Convert a String to Uppercase
+
+Question
+Write a program that takes a string and converts all characters to uppercase using the built-in upper() function.
+
+    Input: hello world
+    Output: HELLO WORLD
+#----------------------------------------#
+Remove Duplicates from a List
+
+Question
+Write a program that takes a list of integers and removes any duplicates using the built-in set() function.
+
+    Input: 1,2,3,3,4,5,5
+    Output: 1,2,3,4,5
+#----------------------------------------#
+Count Occurrences of a Character in a String
+
+Question
+Write a program that takes a string and counts how many times a specific character (e.g., 'a') appears in it using the built-in count() function.
+
+    Input: banana
+    Output: 3
+#----------------------------------------#
+Join a List of Strings
+
+Question
+Write a program that takes a list of words and joins them into a single string with spaces separating the words using the built-in join() function.
+
+    Input: ['Hello', 'World']
+    Output: Hello World
+#----------------------------------------#
+Check if a String Contains Another String
+
+Question
+Write a program that checks if a string contains a specific substring using the built-in in keyword.
+
+    Input: hello world, Substring: world
+    Output: True
+#----------------------------------------#
+Sum of List Elements
+
+Question
+Write a program that accepts a list of numbers and calculates their sum using the built-in sum() function.
+
+    Input: 1,2,3,4,5
+    Output: 15
+
+#----------------------------------------#
+Reverse a List
+
+Question
+Write a program that takes a list and prints it in reverse order using the built-in reverse() function.
+
+    Input: [1, 2, 3, 4, 5]
+    Output: [5, 4, 3, 2, 1]
